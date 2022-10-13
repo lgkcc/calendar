@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    max-height: 100vh;
+}
+.events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.events .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.notes-month {
+    font-size: 28px;
+    text-align: center;
+}
+
+.notes-month section {
+    font-size: 28px;
+}
+
+.events svg {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.events svg:hover {
+    fill: #40a9ff;
+    cursor: pointer;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+}
+.editCalendarCell{
+    font-size: 28px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    z-index: 100;
+}
+.editCalendarCell svg {
+    fill: #333333;
+    padding: 4px;
+}
+
+.editCalendarCell svg:hover {
+    background-color: #afafaf;
+    border-radius: 100px;
+}
