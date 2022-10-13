@@ -1,58 +1,69 @@
-body{
-    padding: 0;
-    margin: 0;
-    max-height: 100vh;
-}
-.events {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+body {
+  padding: 0;
+  margin: 0;
+  max-height: 100vh;
 }
 
-.events .ant-badge-status {
+* {
+  box-sizing: border-box;
+}
+
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .ant-badge-status {
     width: 100%;
     overflow: hidden;
     font-size: 12px;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  svg {
+    font-size: 24px;
+    margin-right: 10px;
+
+    &:hover {
+      fill: #40a9ff;
+      cursor: pointer;
+    }
+  }
 }
 
 .notes-month {
+  font-size: 28px;
+  text-align: center;
+
+  section {
     font-size: 28px;
-    text-align: center;
+  }
 }
 
-.notes-month section {
-    font-size: 28px;
-}
+.editCalendarCell {
+  font-size: 28px;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  z-index: 100;
 
-.events svg {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.events svg:hover {
-    fill: #40a9ff;
-    cursor: pointer;
-}
-
-.event {
-    display: flex;
-    align-items: center;
-}
-.editCalendarCell{
-    font-size: 28px;
-    position: absolute;
-    top: 2px;
-    left: 4px;
-    z-index: 100;
-}
-.editCalendarCell svg {
+  svg {
     fill: #333333;
     padding: 4px;
+
+    &:hover {
+      background-color: #afafaf;
+      border-radius: 100px;
+    }
+  }
 }
 
-.editCalendarCell svg:hover {
-    background-color: #afafaf;
-    border-radius: 100px;
+.ant-picker-body {
+  padding: 0 8px !important;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
 }

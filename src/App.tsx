@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.min.css'
+import React, { useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import CalendarPage from './pages/CalendarPage'
+import EventsListPage from './pages/EventsListPage'
+import { useAppSelector } from './hooks/reduxHook'
+import { notificationCreate } from './utils'
 
-function App() {
+const App: React.FC = () => {
+  const { notificationEvent } = useAppSelector((state) => state.event)
+  useEffect(() => {
+    for (let event of notificationEvent) {
+      notificationCreate(
+        event.notificationTime || 0,
+        event.title,
+        event.startTime,
+        event.endTime
+      )
+    }
+  }, [notificationEvent])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path={'/'} element={<CalendarPage />} />
+        <Route path={'/:date'} element={<EventsListPage />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App
