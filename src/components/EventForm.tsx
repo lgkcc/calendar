@@ -91,7 +91,14 @@ const EventForm: React.FC<IFormCreateEventProps> = ({
       <Form.Item
         name="endTime"
         initialValue={update && moment(event.endTime, TDateFormat.HoursMinSec)}
-        rules={[rules.required(), rules.more('Событие не может закончиться раньше начала',event.startTime, event.endTime)]}
+        rules={[
+          rules.required(),
+          rules.more(
+            'Событие не может закончиться раньше начала',
+            event.startTime,
+            event.endTime
+          )
+        ]}
       >
         <TimePicker
           onChange={(date) => pickDate(date, 'endTime')}

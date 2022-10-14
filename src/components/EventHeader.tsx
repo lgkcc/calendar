@@ -7,13 +7,12 @@ interface IEventHeaderProps {
   openCreateForm: () => void
   openAlert: () => void
   isActually: boolean
-
 }
 
 const EventHeader: React.FC<IEventHeaderProps> = ({
   openCreateForm,
   isActually,
-                                                    openAlert
+  openAlert
 }) => {
   return (
     <div className="event-header">
