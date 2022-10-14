@@ -8,6 +8,7 @@ import Event from '../components/Event'
 import EventHeader from '../components/EventHeader'
 import moment from 'moment/moment'
 import { TDateFormat } from '../models/Date'
+import { Helmet } from 'react-helmet'
 
 const EventsListPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -50,6 +51,9 @@ const EventsListPage = () => {
 
   return (
     <div className="events">
+      <Helmet>
+        <title>Календарь | {date}</title>
+      </Helmet>
       <ConfigProvider
         renderEmpty={() => (
           <Empty description="No Event" image={Empty.PRESENTED_IMAGE_SIMPLE}>

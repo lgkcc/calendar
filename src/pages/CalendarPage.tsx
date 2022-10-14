@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/reduxHook'
 import { updateDate } from '../store/slices/dateSlice'
 import { TDateFormat } from '../models/Date'
 import { EditFilled } from '@ant-design/icons'
+import { Helmet } from 'react-helmet'
 
 const CalendarPage = () => {
   const { events } = useAppSelector((state) => state.event)
@@ -26,6 +27,9 @@ const CalendarPage = () => {
 
     return (
       <>
+        <Helmet>
+          <title>Календарь</title>
+        </Helmet>
         {isCurrent && (
           <EditFilled
             className="editCalendarCell"
