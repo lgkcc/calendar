@@ -5,16 +5,19 @@ import { RollbackOutlined } from '@ant-design/icons'
 
 interface IEventHeaderProps {
   openCreateForm: () => void
+  openAlert: () => void
   isActually: boolean
+
 }
 
 const EventHeader: React.FC<IEventHeaderProps> = ({
   openCreateForm,
-  isActually
+  isActually,
+                                                    openAlert
 }) => {
   return (
     <div className="event-header">
-      <Button type="primary" disabled={!isActually} onClick={openCreateForm}>
+      <Button type="primary" onClick={isActually ? openCreateForm : openAlert}>
         + New event
       </Button>
       <Link to="/">
