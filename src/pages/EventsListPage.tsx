@@ -64,7 +64,7 @@ const EventsListPage = () => {
         action={
           <Space>
             <Button size="small" type="ghost" onClick={openCreateForm}>
-              Да, уверен!
+              Да!
             </Button>
           </Space>
         }
